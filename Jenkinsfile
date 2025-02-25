@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // This checks out the code from the repository.
-                git clone "https://github.com/YuriKha/class7-ci.git"
+                bat 'git clone "https://github.com/YuriKha/class7-ci.git"'
             }
         }
         stage('Run Script') {
