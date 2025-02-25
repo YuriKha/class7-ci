@@ -14,11 +14,11 @@ pipeline {
                     // Jenkins sets BRANCH_NAME for multibranch pipelines.
                     if (env.BRANCH_NAME == 'main') {
                         // For the master branch, simply run the script.
-                        echo "Running myapp.py on master branch..."
+                        echo "Running main.py on main branch..."
                         bat 'python main.py'
                     } else if (env.BRANCH_NAME?.startsWith("feature")) {
                         // For any branch starting with "feature", run the script and then fail intentionally.
-                        echo "Running myapp.py on a feature branch..."
+                        echo "Running main.py on a feature branch..."
                         bat 'python main.py'
                         error("Intentional failure for feature branch")
                     } else {
